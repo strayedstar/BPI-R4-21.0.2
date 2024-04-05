@@ -1,11 +1,5 @@
 Fork from BPI-SINOVOIP/BPI-R4-OPENWRT-V21.02
-BPI-R4-OPENWRT-V21.02 The BSP don't include any wifi driver and don't support BE19000, BE13500 WiFi Card。
-OpenWrt logo
-
-OpenWrt Project is a Linux operating system targeting embedded devices. Instead of trying to create a single, static firmware, OpenWrt provides a fully writable filesystem with package management. This frees you from the application selection and configuration provided by the vendor and allows you to customize the device through the use of packages to suit any application. For developers, OpenWrt is the framework to build an application without having to build a complete firmware around it; for users this means the ability for full customization, to use the device in ways never envisioned.
-
-Sunshine!
-
+BPI-R4-OPENWRT-V21.02 The BSP don't include any wifi driver and don't support BE19000, BE13500 WiFi Card.
 Development
 To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sensitive filesystem required). Cygwin is unsupported because of the lack of a case sensitive file system.
 
@@ -23,32 +17,13 @@ Run make menuconfig to select your preferred configuration for the toolchain, ta
 
 Run make to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
 
-Related Repositories
-The main repository uses multiple sub-repositories to manage packages of different categories. All packages are installed via the OpenWrt package manager called opkg. If you're looking to develop the web interface or port packages to OpenWrt, please find the fitting repository below.
-
-LuCI Web Interface: Modern and modular interface to control the device via a web browser.
-
-OpenWrt Packages: Community repository of ported packages.
-
-OpenWrt Routing: Packages specifically focused on (mesh) routing.
-
-Support Information
-For a list of supported devices see the OpenWrt Hardware Database
-
-Documentation
-Quick Start Guide
-User Guide
-Developer Documentation
-Technical Reference
-Support Community
-Forum: For usage, projects, discussions and hardware advise.
-Support Chat: Channel #openwrt on oftc.net.
-Developer Community
-Bug Reports: Report bugs in OpenWrt
-Dev Mailing List: Send patches
-Dev Chat: Channel #openwrt-devel on oftc.net.
-License
 OpenWrt is licensed under GPL-2.0
 
-
 可以较为正常的构建镜像,但是EMMC和SD卡依然会有jffs2报错(一段时间以后正常,正常以前对文件系统的提交会被延后.),推测可能是rootfs或者GPT-image的问题,但是没有时间解决,因为还要考试,欢迎有能力解决.
+dtc编译可以不执行,不影响正常使用
+package/Makefile 
+$(curdir)/compile: $(curdir)/cryptsetup/host/compile
+#$(curdir)/compile: $(curdir)/dtc/host/compile
+要是想使用dtc(默认启用,需要修改),在编译报错以后删去build_dir/hostpkg/dtc-1.6.0/libfdt/libfdt.h的第251并且添加		
+uint32_t *name_ptr = &fdth->name; \
+	 *name_ptr = cpu_to_fdt32(val); \
