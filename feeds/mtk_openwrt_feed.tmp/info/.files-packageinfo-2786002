@@ -1,0 +1,17 @@
+feed/app/atenl
+feed/app/fips_test_tool
+feed/app/flowtable
+feed/app/jitterrng
+feed/app/libkcapi
+feed/app/mii_mgr
+feed/app/mt76-vendor
+feed/app/mtk_factory_rw
+feed/app/mtk_failsafe
+feed/app/mtkhnat_util
+feed/app/openssl-fips-ext
+feed/app/regs
+feed/app/switch
+feed/app/tops-tool
+feed/kernel/crypto-eip
+feed/kernel/pce
+feed/kernel/tops

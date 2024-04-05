@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/mail/pigeonhole/Makefile
+Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext
+
+Package: dovecot-pigeonhole
+Version: Build-Depends: !BUILD_NLS:libiconv !BUILD_NLS:gettext  Package: dovecot Version: 2.3.13-0 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +DOVECOT_GSSAPI:krb5-libs +DOVECOT_LDAP:libopenldap +DOVECOT_MYSQL:libmysqlclient +DOVECOT_PGSQL:libpq +DOVECOT_SQLITE:libsqlite3 +libopenssl +librt +zlib +libbz2 +libcap +DOVECOT_ICU:icu +BUILD_NLS:libiconv-full Conflicts:  Menu-Depends:  Provides:  Section: mail Category: Mail Repository: base Title: An IMAP and POP3 daemon Maintainer: Lucian Cristian <lucian.cristian@gmail.com> Require-User: dovecot=59:dovecot=59 dovenull=60:dovenull=60 Source: dovecot-2.3.13.tar.gz License: LGPL-2.1-only MIT BSD-3-Clause LicenseFiles: COPYING COPYING.LGPL COPYING.MIT Type: ipkg Description:  Dovecot is a program which provides POP3 and IMAP services. https://www.dovecot.org/ Lucian Cristian <lucian.cristian@gmail.com> @@ Config: 	source "feeds/packages/mail/dovecot/Config.in" @@  Package: dovecot-utils Version: 2.3.13-0 Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +dovecot Conflicts:  Menu-Depends:  Provides:  Section: mail Category: Mail Repository: base Title: doveadm and dsync utilities for Dovecot Maintainer: Lucian Cristian <lucian.cristian@gmail.com> Source: dovecot-2.3.13.tar.gz License: LGPL-2.1-only MIT BSD-3-Clause LicenseFiles: COPYING COPYING.LGPL COPYING.MIT Type: ipkg Description: doveadm and dsync utilities for Dovecot Lucian Cristian <lucian.cristian@gmail.com> @@  2.3.13-0.5.14-0
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +dovecot
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: mail
+Category: Mail
+Repository: base
+Title: Mail filtering facilities for Dovecot
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: dovecot-2.3-pigeonhole-0.5.14.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING COPYING.LGPL
+Type: ipkg
+Description:   Pigeonhole provides mail filtering facilities for Dovecot using the Sieve
+  (RFC 5228) language.
+https://wiki2.dovecot.org/Pigeonhole
+W. Michael Petullo <mike@flyn.org>
+@@
+
+
