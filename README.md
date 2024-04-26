@@ -20,10 +20,3 @@ Run make to build your firmware. This will download all sources, build the cross
 OpenWrt is licensed under GPL-2.0
 
 可以较为正常的构建镜像,但是EMMC和SD卡依然会有jffs2报错(一段时间以后正常,正常以前对文件系统的提交会被延后.),推测可能是rootfs或者GPT-image的问题,但是没有时间解决,因为还要考试,欢迎有能力解决.
-dtc编译可以不执行,不影响正常使用
-package/Makefile 
-$(curdir)/compile: $(curdir)/cryptsetup/host/compile
-#$(curdir)/compile: $(curdir)/dtc/host/compile
-要是想使用dtc(默认启用,需要修改),在编译报错以后删去build_dir/hostpkg/dtc-1.6.0/libfdt/libfdt.h的第251并且添加		
-uint32_t *name_ptr = &fdth->name; \
-	 *name_ptr = cpu_to_fdt32(val); \
