@@ -1,0 +1,4 @@
+luci/luci-app-store
+luci/luci-lib-taskd
+luci/luci-lib-xterm
+luci/taskd

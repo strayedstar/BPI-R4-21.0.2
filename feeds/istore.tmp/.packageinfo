@@ -1,0 +1,90 @@
+Source-Makefile: feeds/istore/luci/luci-app-store/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-app-store
+Submenu: 3. Applications
+Version: 0.1.14-3
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +curl +opkg +luci-lib-ipkg +tar +coreutils +coreutils-stat +libuci-lua +mount-utils +luci-lib-taskd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: LuCI based ipk store
+Maintainer: OpenWrt LuCI community
+Source: istore-ui-v0.1.14-2.tar.gz
+Type: ipkg
+Description:    luci-app-store is a ipk store developed by LinkEase team
+https://github.com/openwrt/luci
+OpenWrt LuCI community
+@@
+
+
+Source-Makefile: feeds/istore/luci/luci-lib-taskd/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-lib-taskd
+Submenu: 6. Libraries
+Version: 1.0.18
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +luci-lib-xterm +taskd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Task library
+Maintainer: OpenWrt LuCI community
+Source: 
+Type: ipkg
+Description: Task library
+https://github.com/openwrt/luci
+OpenWrt LuCI community
+@@
+
+
+Source-Makefile: feeds/istore/luci/luci-lib-xterm/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-lib-xterm
+Submenu: 6. Libraries
+Version: 4.18.0
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Xterm.js library
+Maintainer: OpenWrt LuCI community
+Source: 
+License: MIT
+Type: ipkg
+Description: Xterm.js library
+https://github.com/openwrt/luci
+OpenWrt LuCI community
+@@
+
+
+Source-Makefile: feeds/istore/luci/taskd/Makefile
+
+Package: taskd
+Version: 1.0.3-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread +procd +script-utils +coreutils-stty
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Simple Task Manager
+Maintainer: jjm2473 <jjm2473@gmail.com>
+Source: 
+Type: ipkg
+Description: 	Simple Task Manager based on procd
+jjm2473 <jjm2473@gmail.com>
+@@
+
+

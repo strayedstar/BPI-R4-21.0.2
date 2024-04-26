@@ -1,0 +1,24 @@
+Source-Makefile: feeds/istore/luci/luci-lib-xterm/Makefile
+Build-Depends: lua/host luci-base/host LUCI_CSSTIDY:csstidy/host LUCI_SRCDIET:luasrcdiet/host 
+
+Package: luci-lib-xterm
+Submenu: 6. Libraries
+Version: 4.18.0
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: luci
+Category: LuCI
+Repository: base
+Title: Xterm.js library
+Maintainer: OpenWrt LuCI community
+Source: 
+License: MIT
+Type: ipkg
+Description: Xterm.js library
+https://github.com/openwrt/luci
+OpenWrt LuCI community
+@@
+
+
