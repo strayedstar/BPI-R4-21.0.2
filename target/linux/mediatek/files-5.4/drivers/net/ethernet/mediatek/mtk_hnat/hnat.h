@@ -858,13 +858,13 @@ struct foe_entry {
 #define MAX_EXT_DEVS		(0x3fU)
 #define MAX_IF_NUM		64
 
-#if defined(CONFIG_MEDIATEK_NETSYS_V3)
+/*#if defined(CONFIG_MEDIATEK_NETSYS_V3)*/
 #define MAX_PPE_NUM		3
-#elif defined(CONFIG_MEDIATEK_NETSYS_V2)
+/*#elif defined(CONFIG_MEDIATEK_NETSYS_V2)
 #define MAX_PPE_NUM		2
 #else
 #define MAX_PPE_NUM		1
-#endif
+#endif*/
 #define CFG_PPE_NUM		(hnat_priv->ppe_num)
 
 struct mib_entry {
@@ -882,11 +882,11 @@ struct hnat_accounting {
 };
 
 enum mtk_hnat_version {
-	MTK_HNAT_V1_1 = 1,	/* version 1.1: mt7621, mt7623	*/
+	MTK_HNAT_V1_1,	/* version 1.1: mt7621, mt7623	*/
 	MTK_HNAT_V1_2,		/* version 1.2: mt7622		*/
 	MTK_HNAT_V1_3,		/* version 1.3: mt7629		*/
 	MTK_HNAT_V2,		/* version 2:	mt7981, mt7986	*/
-	MTK_HNAT_V3,		/* version 3:	mt7988		*/
+	MTK_HNAT_V3 =1,		/* version 3:	mt7988		*/
 };
 
 struct mtk_hnat_data {
